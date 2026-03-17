@@ -67,36 +67,34 @@
       z-index: 1;
       background: linear-gradient(
         160deg,
-        rgba(30, 18, 60, 0.82) 0%,
-        rgba(8, 8, 28, 0.78) 50%,
-        rgba(6, 20, 50, 0.82) 100%
+        rgba(28, 16, 56, 0.75) 0%,
+        rgba(10, 10, 32, 0.70) 60%,
+        rgba(8, 22, 52, 0.75) 100%
       );
-      border: 1px solid rgba(123, 47, 247, 0.35);
+      border: 1px solid transparent;
       border-radius: 28px;
       padding: 60px 52px;
       max-width: 560px;
       width: 100%;
       text-align: center;
       backdrop-filter: blur(28px);
-      transform-style: preserve-3d;
+      background-clip: padding-box;
       box-shadow:
-        0 1px 0 rgba(255,255,255,0.08) inset,        /* 상단 하이라이트 */
-        0 -1px 0 rgba(0,0,0,0.5) inset,              /* 하단 음영 */
-        4px 4px 0 rgba(0,0,0,0.25),                  /* 오른쪽 하단 그림자 (입체) */
-        0 20px 60px rgba(123, 47, 247, 0.3),
-        0 4px 120px rgba(0, 200, 255, 0.1),
-        0 0 0 1px rgba(0, 200, 255, 0.07) inset;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+        0 2px 1px rgba(255,255,255,0.06) inset,
+        0 -2px 6px rgba(0,0,0,0.4) inset,
+        0 24px 64px rgba(80, 30, 180, 0.28),
+        0 8px 32px rgba(0, 0, 0, 0.45);
+      outline: 1px solid rgba(160, 120, 255, 0.15);
+      transition: transform 0.35s ease, box-shadow 0.35s ease, outline-color 0.35s ease;
     }
     .card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-5px) scale(1.005);
       box-shadow:
-        0 1px 0 rgba(255,255,255,0.1) inset,
-        0 -1px 0 rgba(0,0,0,0.5) inset,
-        6px 8px 0 rgba(0,0,0,0.2),
-        0 28px 80px rgba(123, 47, 247, 0.4),
-        0 4px 140px rgba(0, 200, 255, 0.15),
-        0 0 0 1px rgba(0, 200, 255, 0.1) inset;
+        0 2px 1px rgba(255,255,255,0.08) inset,
+        0 -2px 6px rgba(0,0,0,0.4) inset,
+        0 32px 80px rgba(80, 30, 180, 0.38),
+        0 12px 40px rgba(0, 0, 0, 0.5);
+      outline-color: rgba(160, 120, 255, 0.28);
     }
 
     /* 아트 이미지 */
@@ -142,21 +140,20 @@
       justify-content: center;
     }
     .tag {
-      background: rgba(123, 47, 247, 0.28);
-      border: 1px solid rgba(180, 140, 255, 0.55);
-      color: #ede9ff;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: rgba(210, 200, 240, 0.9);
       padding: 7px 18px;
       border-radius: 999px;
-      font-size: 0.875rem;
-      font-weight: 700;
+      font-size: 0.85rem;
+      font-weight: 500;
       letter-spacing: 0.3px;
-      text-shadow: 0 0 8px rgba(196,181,253,0.6);
       transition: background 0.25s, border-color 0.25s, color 0.25s;
     }
     .tag:hover {
-      background: rgba(123, 47, 247, 0.5);
-      border-color: rgba(200, 170, 255, 0.85);
-      color: #ffffff;
+      background: rgba(255, 255, 255, 0.11);
+      border-color: rgba(255, 255, 255, 0.25);
+      color: rgba(235, 228, 255, 1);
     }
 
     @media (max-width: 480px) {
