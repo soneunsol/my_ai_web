@@ -21,28 +21,13 @@ jobs:
       - name: 코드 체크아웃
         uses: actions/checkout@v4
 
-      - name: Node.js 설정
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: "npm"
-          cache-dependency-path: lecture1/_template_settings/package-lock.json
-
-      - name: 의존성 설치
-        working-directory: lecture1/_template_settings
-        run: npm ci
-
-      - name: 빌드
-        working-directory: lecture1/_template_settings
-        run: npm run build
-
       - name: Pages 설정
         uses: actions/configure-pages@v4
 
       - name: 아티팩트 업로드
         uses: actions/upload-pages-artifact@v3
         with:
-          path: lecture1/_template_settings/dist
+          path: .
 
   deploy:
     environment:
