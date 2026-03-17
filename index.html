@@ -65,18 +65,38 @@
     .card {
       position: relative;
       z-index: 1;
-      background: rgba(8, 8, 28, 0.72);
-      border: 1px solid rgba(123, 47, 247, 0.3);
+      background: linear-gradient(
+        160deg,
+        rgba(30, 18, 60, 0.82) 0%,
+        rgba(8, 8, 28, 0.78) 50%,
+        rgba(6, 20, 50, 0.82) 100%
+      );
+      border: 1px solid rgba(123, 47, 247, 0.35);
       border-radius: 28px;
       padding: 60px 52px;
       max-width: 560px;
       width: 100%;
       text-align: center;
-      backdrop-filter: blur(24px);
+      backdrop-filter: blur(28px);
+      transform-style: preserve-3d;
       box-shadow:
-        0 0 0 1px rgba(0, 200, 255, 0.08) inset,
-        0 8px 80px rgba(123, 47, 247, 0.25),
-        0 0 120px rgba(0, 200, 255, 0.08);
+        0 1px 0 rgba(255,255,255,0.08) inset,        /* 상단 하이라이트 */
+        0 -1px 0 rgba(0,0,0,0.5) inset,              /* 하단 음영 */
+        4px 4px 0 rgba(0,0,0,0.25),                  /* 오른쪽 하단 그림자 (입체) */
+        0 20px 60px rgba(123, 47, 247, 0.3),
+        0 4px 120px rgba(0, 200, 255, 0.1),
+        0 0 0 1px rgba(0, 200, 255, 0.07) inset;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow:
+        0 1px 0 rgba(255,255,255,0.1) inset,
+        0 -1px 0 rgba(0,0,0,0.5) inset,
+        6px 8px 0 rgba(0,0,0,0.2),
+        0 28px 80px rgba(123, 47, 247, 0.4),
+        0 4px 140px rgba(0, 200, 255, 0.15),
+        0 0 0 1px rgba(0, 200, 255, 0.1) inset;
     }
 
     /* 아트 이미지 */
@@ -122,18 +142,21 @@
       justify-content: center;
     }
     .tag {
-      background: rgba(123, 47, 247, 0.18);
-      border: 1px solid rgba(123, 47, 247, 0.45);
-      color: #c4b5fd;
+      background: rgba(123, 47, 247, 0.28);
+      border: 1px solid rgba(180, 140, 255, 0.55);
+      color: #ede9ff;
       padding: 7px 18px;
       border-radius: 999px;
       font-size: 0.875rem;
-      font-weight: 600;
-      transition: background 0.25s, border-color 0.25s;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      text-shadow: 0 0 8px rgba(196,181,253,0.6);
+      transition: background 0.25s, border-color 0.25s, color 0.25s;
     }
     .tag:hover {
-      background: rgba(123, 47, 247, 0.38);
-      border-color: rgba(123, 47, 247, 0.8);
+      background: rgba(123, 47, 247, 0.5);
+      border-color: rgba(200, 170, 255, 0.85);
+      color: #ffffff;
     }
 
     @media (max-width: 480px) {
