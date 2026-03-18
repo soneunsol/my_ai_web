@@ -78,24 +78,29 @@ body {
 }
 
 @keyframes flow1 {
-  0%   { transform: rotate(-28deg) translate(0%,   0px)  scaleX(1)    scaleY(1);    }
-  25%  { transform: rotate(-25deg) translate(4%,  18px)  scaleX(1.06) scaleY(1.10); }
-  50%  { transform: rotate(-30deg) translate(2%,   8px)  scaleX(0.97) scaleY(0.94); }
-  75%  { transform: rotate(-26deg) translate(5%,  22px)  scaleX(1.04) scaleY(1.06); }
-  100% { transform: rotate(-28deg) translate(0%,   0px)  scaleX(1)    scaleY(1);    }
+  0%   { transform: rotate(-28deg) translate(0%,    0px) scaleX(1)    scaleY(1);    }
+  15%  { transform: rotate(-26deg) translate(3%,  -28px) scaleX(1.04) scaleY(0.94); }
+  35%  { transform: rotate(-29deg) translate(6%,   20px) scaleX(1.07) scaleY(1.12); }
+  50%  { transform: rotate(-27deg) translate(4%,  -16px) scaleX(0.98) scaleY(0.96); }
+  70%  { transform: rotate(-30deg) translate(7%,   30px) scaleX(1.05) scaleY(1.08); }
+  85%  { transform: rotate(-26deg) translate(2%,  -10px) scaleX(1.02) scaleY(0.97); }
+  100% { transform: rotate(-28deg) translate(0%,    0px) scaleX(1)    scaleY(1);    }
 }
 @keyframes flow2 {
-  0%   { transform: rotate(-26deg) translate(0%,   0px)  scaleX(1)    scaleY(1);    }
-  20%  { transform: rotate(-23deg) translate(-3%, 14px)  scaleX(1.05) scaleY(1.14); }
-  50%  { transform: rotate(-28deg) translate(3%,   6px)  scaleX(0.96) scaleY(0.90); }
-  75%  { transform: rotate(-24deg) translate(-2%, 18px)  scaleX(1.03) scaleY(1.08); }
-  100% { transform: rotate(-26deg) translate(0%,   0px)  scaleX(1)    scaleY(1);    }
+  0%   { transform: rotate(-26deg) translate(0%,    0px) scaleX(1)    scaleY(1);    }
+  20%  { transform: rotate(-28deg) translate(-4%,  24px) scaleX(1.06) scaleY(1.15); }
+  40%  { transform: rotate(-24deg) translate(2%,  -18px) scaleX(0.96) scaleY(0.90); }
+  60%  { transform: rotate(-27deg) translate(-3%,  28px) scaleX(1.04) scaleY(1.10); }
+  80%  { transform: rotate(-25deg) translate(3%,  -12px) scaleX(0.98) scaleY(0.94); }
+  100% { transform: rotate(-26deg) translate(0%,    0px) scaleX(1)    scaleY(1);    }
 }
 @keyframes flow3 {
-  0%   { transform: rotate(-30deg) translate(0%,   0px)  scaleX(1)    scaleY(1);    }
-  35%  { transform: rotate(-27deg) translate(5%,  16px)  scaleX(1.07) scaleY(1.18); }
-  65%  { transform: rotate(-31deg) translate(2%,   4px)  scaleX(0.95) scaleY(0.92); }
-  100% { transform: rotate(-30deg) translate(0%,   0px)  scaleX(1)    scaleY(1);    }
+  0%   { transform: rotate(-30deg) translate(0%,    0px) scaleX(1)    scaleY(1);    }
+  18%  { transform: rotate(-27deg) translate(4%,   22px) scaleX(1.05) scaleY(1.14); }
+  38%  { transform: rotate(-31deg) translate(1%,  -20px) scaleX(0.95) scaleY(0.92); }
+  58%  { transform: rotate(-28deg) translate(6%,   26px) scaleX(1.07) scaleY(1.10); }
+  78%  { transform: rotate(-30deg) translate(2%,  -14px) scaleX(0.97) scaleY(0.95); }
+  100% { transform: rotate(-30deg) translate(0%,    0px) scaleX(1)    scaleY(1);    }
 }
 
 @keyframes float {
