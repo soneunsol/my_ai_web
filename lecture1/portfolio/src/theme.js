@@ -91,19 +91,25 @@ const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         containedPrimary: {
-          background: 'linear-gradient(135deg, #7b2ff7, #00c8ff)',
-          boxShadow: '0 4px 20px rgba(123, 47, 247, 0.4)',
+          background: 'rgba(80, 30, 160, 0.55)',
+          border: '1px solid rgba(160, 120, 255, 0.35)',
+          backdropFilter: 'blur(12px)',
+          boxShadow: '0 4px 20px rgba(60, 20, 120, 0.35)',
+          color: 'rgba(220, 210, 255, 0.95)',
           '&:hover': {
-            background: 'linear-gradient(135deg, #9a4fff, #22d4ff)',
-            boxShadow: '0 6px 28px rgba(123, 47, 247, 0.55)',
+            background: 'rgba(100, 40, 190, 0.65)',
+            borderColor: 'rgba(180, 140, 255, 0.5)',
+            boxShadow: '0 6px 28px rgba(80, 30, 180, 0.45)',
           },
         },
         outlinedPrimary: {
-          borderColor: 'rgba(123, 47, 247, 0.5)',
-          color: '#c084fc',
+          borderColor: 'rgba(160, 120, 255, 0.3)',
+          color: 'rgba(200, 180, 255, 0.85)',
+          backdropFilter: 'blur(8px)',
           '&:hover': {
-            borderColor: '#7b2ff7',
-            background: 'rgba(123, 47, 247, 0.1)',
+            borderColor: 'rgba(160, 120, 255, 0.55)',
+            background: 'rgba(80, 30, 160, 0.2)',
+            color: 'rgba(220, 210, 255, 0.95)',
           },
         },
       },

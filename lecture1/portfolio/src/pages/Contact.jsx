@@ -17,8 +17,8 @@ const SNS_LINKS = [
   {
     icon: <GitHubIcon sx={{ color: '#c084fc' }} />,
     label: 'GitHub',
-    value: 'github.com/soneunsol',
-    href: 'https://github.com/soneunsol',
+    value: 'github.com/example',
+    href: 'https://github.com/example',
   },
   {
     icon: <EmailIcon sx={{ color: '#ff3cac' }} />,
