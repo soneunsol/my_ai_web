@@ -48,51 +48,54 @@ body {
 }
 .aurora-band {
   position: absolute;
-  width: 220%;
-  border-radius: 50%;
-  filter: blur(90px);
+  width: 200%;
+  filter: blur(110px);
   transform-origin: center center;
 }
 .aurora-band:nth-child(1) {
-  height: 320px;
+  height: 380px;
+  border-radius: 62% 38% 55% 45% / 48% 52% 48% 52%;
   background: linear-gradient(135deg,
     #00ff87 0%, #00e5ff 25%, #7b2ff7 55%, #ff3cac 80%, #00e5ff 100%);
-  top: -160px; left: -60%; opacity: 0.38;
-  animation: flow1 16s ease-in-out infinite;
+  top: -180px; left: -50%; opacity: 0.36;
+  animation: flow1 18s cubic-bezier(0.45, 0, 0.55, 1) infinite;
 }
 .aurora-band:nth-child(2) {
-  height: 260px;
+  height: 300px;
+  border-radius: 45% 55% 40% 60% / 55% 45% 55% 45%;
   background: linear-gradient(135deg,
     #ff6b6b 0%, #ffd93d 20%, #6bcb77 50%, #4d96ff 75%, #c77dff 100%);
-  top: 20px; left: -40%; opacity: 0.22;
-  animation: flow2 22s ease-in-out infinite;
+  top: 30px; left: -35%; opacity: 0.20;
+  animation: flow2 24s cubic-bezier(0.45, 0, 0.55, 1) infinite;
 }
 .aurora-band:nth-child(3) {
-  height: 220px;
+  height: 260px;
+  border-radius: 55% 45% 62% 38% / 42% 58% 42% 58%;
   background: linear-gradient(135deg,
     #c77dff 0%, #00f5a0 35%, #00c8ff 60%, #ff6fcf 100%);
-  top: 140px; left: -50%; opacity: 0.18;
-  animation: flow3 28s ease-in-out infinite;
+  top: 160px; left: -45%; opacity: 0.16;
+  animation: flow3 30s cubic-bezier(0.45, 0, 0.55, 1) infinite;
 }
 
 @keyframes flow1 {
-  0%   { transform: rotate(-30deg) translateX(0%)  scaleY(1);    }
-  30%  { transform: rotate(-28deg) translateX(5%)  scaleY(1.12); }
-  60%  { transform: rotate(-32deg) translateX(2%)  scaleY(0.93); }
-  100% { transform: rotate(-30deg) translateX(0%)  scaleY(1);    }
+  0%   { transform: rotate(-28deg) translate(0%,   0px)  scaleX(1)    scaleY(1);    }
+  25%  { transform: rotate(-25deg) translate(4%,  18px)  scaleX(1.06) scaleY(1.10); }
+  50%  { transform: rotate(-30deg) translate(2%,   8px)  scaleX(0.97) scaleY(0.94); }
+  75%  { transform: rotate(-26deg) translate(5%,  22px)  scaleX(1.04) scaleY(1.06); }
+  100% { transform: rotate(-28deg) translate(0%,   0px)  scaleX(1)    scaleY(1);    }
 }
 @keyframes flow2 {
-  0%   { transform: rotate(-28deg) translateX(0%)  scaleY(1);    }
-  25%  { transform: rotate(-26deg) translateX(-4%) scaleY(1.18); }
-  55%  { transform: rotate(-30deg) translateX(3%)  scaleY(0.88); }
-  80%  { transform: rotate(-27deg) translateX(-2%) scaleY(1.08); }
-  100% { transform: rotate(-28deg) translateX(0%)  scaleY(1);    }
+  0%   { transform: rotate(-26deg) translate(0%,   0px)  scaleX(1)    scaleY(1);    }
+  20%  { transform: rotate(-23deg) translate(-3%, 14px)  scaleX(1.05) scaleY(1.14); }
+  50%  { transform: rotate(-28deg) translate(3%,   6px)  scaleX(0.96) scaleY(0.90); }
+  75%  { transform: rotate(-24deg) translate(-2%, 18px)  scaleX(1.03) scaleY(1.08); }
+  100% { transform: rotate(-26deg) translate(0%,   0px)  scaleX(1)    scaleY(1);    }
 }
 @keyframes flow3 {
-  0%   { transform: rotate(-32deg) translateX(0%)  scaleY(1);    }
-  40%  { transform: rotate(-29deg) translateX(6%)  scaleY(1.22); }
-  70%  { transform: rotate(-33deg) translateX(2%)  scaleY(0.9);  }
-  100% { transform: rotate(-32deg) translateX(0%)  scaleY(1);    }
+  0%   { transform: rotate(-30deg) translate(0%,   0px)  scaleX(1)    scaleY(1);    }
+  35%  { transform: rotate(-27deg) translate(5%,  16px)  scaleX(1.07) scaleY(1.18); }
+  65%  { transform: rotate(-31deg) translate(2%,   4px)  scaleX(0.95) scaleY(0.92); }
+  100% { transform: rotate(-30deg) translate(0%,   0px)  scaleX(1)    scaleY(1);    }
 }
 
 @keyframes float {
