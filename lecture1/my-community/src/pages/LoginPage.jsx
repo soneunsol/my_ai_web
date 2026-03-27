@@ -3,29 +3,9 @@ import {
   Box, Card, CardContent, Typography,
   TextField, Button, Alert, Link,
 } from '@mui/material';
-import { Code as CodeIcon, Brush as BrushIcon } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { signIn } from '../services/authService';
-
-const Logo = () => (
-  <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mb: 3 }}>
-    <Box
-      sx={{
-        display: 'flex', alignItems: 'center', gap: 1,
-        bgcolor: 'primary.main', borderRadius: 3, px: 3, py: 1.5, mb: 1,
-      }}
-    >
-      <CodeIcon sx={{ color: '#fff', fontSize: 28 }} />
-      <BrushIcon sx={{ color: '#fff', fontSize: 28 }} />
-    </Box>
-    <Typography variant="h6" sx={{ fontWeight: 800, color: 'primary.main', letterSpacing: 1 }}>
-      DevDesign Hub
-    </Typography>
-    <Typography variant="caption" color="text.secondary">
-      Design &amp; Dev Sharing Community
-    </Typography>
-  </Box>
-);
+import Logo from '../components/common/Logo';
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -61,7 +41,7 @@ const LoginPage = () => {
     <Box sx={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', bgcolor: 'background.default' }}>
       <Card elevation={4} sx={{ width: '100%', maxWidth: 400, p: 2 }}>
         <CardContent>
-          <Logo />
+          <Logo variant="login" />
 
           <Typography variant="h5" sx={{ mb: 3, fontWeight: 700, textAlign: 'center' }}>
             로그인
