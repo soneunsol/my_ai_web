@@ -3,7 +3,7 @@ import {
   Typography, Card, CardContent, CardActionArea,
   Box, Chip, CircularProgress, Alert, Fab,
 } from '@mui/material';
-import { Add as AddIcon } from '@mui/icons-material';
+import { Add as AddIcon, ChatBubbleOutline as CommentIcon } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import Layout from '../components/layout/Layout';
 import { getPosts } from '../services/postService';
@@ -45,6 +45,12 @@ const PostListPage = () => {
                   <Typography variant="caption" color="text.secondary">
                     {new Date(post.created_at).toLocaleDateString('ko-KR')}
                   </Typography>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, ml: 'auto' }}>
+                    <CommentIcon sx={{ fontSize: 14, color: 'text.secondary' }} />
+                    <Typography variant="caption" color="text.secondary">
+                      {post.comments?.[0]?.count ?? 0}
+                    </Typography>
+                  </Box>
                 </Box>
               </CardContent>
             </CardActionArea>
