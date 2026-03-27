@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import {
   Typography, Card, CardContent, CardActionArea,
-  Box, Chip, CircularProgress, Alert, Fab,
+  Box, Chip, CircularProgress, Alert, Fab, Button,
 } from '@mui/material';
 import {
   Add as AddIcon,
@@ -12,6 +12,7 @@ import {
 import { useNavigate } from 'react-router-dom';
 import Layout from '../components/layout/Layout';
 import { getPosts } from '../services/postService';
+import { signOut } from '../services/authService';
 import useAuth from '../hooks/useAuth';
 
 const PostListPage = () => {
@@ -31,9 +32,19 @@ const PostListPage = () => {
   return (
     <Layout>
       {user && (
-        <Typography variant="body1" color="primary" sx={{ mb: 1, fontWeight: 500 }}>
-          {user.user_metadata?.username || user.email}님 환영해요!
-        </Typography>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1 }}>
+          <Typography variant="body1" color="primary" sx={{ fontWeight: 500 }}>
+            {user.user_metadata?.username || user.email}님 환영해요!
+          </Typography>
+          <Button
+            variant="outlined"
+            size="small"
+            color="inherit"
+            onClick={async () => { await signOut(); navigate('/login'); }}
+          >
+            로그아웃
+          </Button>
+        </Box>
       )}
 
       <Typography variant="h4" sx={{ mb: 3, fontWeight: 700 }}>

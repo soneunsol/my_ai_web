@@ -36,7 +36,7 @@ const LoginPage = () => {
 
   const handleLogin = async () => {
     if (!email || !password) {
-      setError('이메일과 비밀번호를 입력해주세요.');
+      setError('아이디와 비밀번호를 입력해주세요.');
       return;
     }
     setLoading(true);
@@ -48,7 +48,7 @@ const LoginPage = () => {
       if (msg.includes('Email not confirmed')) {
         setError('이메일 인증이 필요합니다. 가입 시 받은 이메일의 인증 링크를 클릭해주세요.');
       } else if (msg.includes('Invalid login credentials')) {
-        setError('이메일 또는 비밀번호가 올바르지 않습니다.');
+        setError('아이디 또는 비밀번호가 올바르지 않습니다.');
       } else {
         setError(`로그인 실패: ${msg}`);
       }
@@ -72,7 +72,7 @@ const LoginPage = () => {
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
             <TextField
               fullWidth
-              label="이메일"
+              label="아이디 (이메일)"
               type="email"
               variant="outlined"
               value={email}

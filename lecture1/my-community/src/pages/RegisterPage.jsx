@@ -42,7 +42,7 @@ const RegisterPage = () => {
       return;
     }
     if (usernameStatus !== 'available') {
-      setError('닉네임 중복확인을 완료해주세요.');
+      setError('아이디 중복확인을 완료해주세요.');
       return;
     }
     if (!allRulesPass) {
@@ -88,11 +88,11 @@ const RegisterPage = () => {
           {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
 
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-            {/* 닉네임 + 중복확인 */}
+            {/* 아이디 + 중복확인 */}
             <Box sx={{ display: 'flex', gap: 1 }}>
               <TextField
                 fullWidth
-                label="닉네임"
+                label="아이디 (닉네임)"
                 variant="outlined"
                 value={username}
                 onChange={(e) => { setUsername(e.target.value); setUsernameStatus(null); }}
@@ -107,10 +107,10 @@ const RegisterPage = () => {
               </Button>
             </Box>
             {usernameStatus === 'available' && (
-              <Alert severity="success" sx={{ py: 0.5 }}>사용 가능한 닉네임입니다.</Alert>
+              <Alert severity="success" sx={{ py: 0.5 }}>사용 가능한 아이디입니다.</Alert>
             )}
             {usernameStatus === 'taken' && (
-              <Alert severity="error" sx={{ py: 0.5 }}>이미 사용 중인 닉네임입니다.</Alert>
+              <Alert severity="error" sx={{ py: 0.5 }}>이미 사용 중인 아이디입니다.</Alert>
             )}
 
             <TextField
