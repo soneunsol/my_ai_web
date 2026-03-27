@@ -58,44 +58,55 @@ const PostListPage = () => {
         {posts.map((post) => (
           <Card key={post.id} elevation={2}>
             <CardActionArea onClick={() => navigate(`/posts/${post.id}`)}>
-              <CardContent>
-                <Typography variant="h6" sx={{ fontWeight: 500 }}>
-                  {post.title}
-                </Typography>
-                <Box sx={{ display: 'flex', gap: 1, mt: 1, alignItems: 'center', flexWrap: 'wrap' }}>
-                  <Chip label={post.profiles?.username || '알 수 없음'} size="small" />
-                  <Typography variant="caption" color="text.secondary">
-                    {new Date(post.created_at).toLocaleDateString('ko-KR')}
+              <Box sx={{ display: 'flex' }}>
+                <CardContent sx={{ flex: 1 }}>
+                  <Typography variant="h6" sx={{ fontWeight: 500 }}>
+                    {post.title}
                   </Typography>
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, ml: 'auto' }}>
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-                      <ViewIcon sx={{ fontSize: 14, color: 'text.secondary' }} />
-                      <Typography variant="caption" color="text.secondary">
-                        {post.views ?? 0}
-                      </Typography>
-                    </Box>
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-                      <LikeIcon sx={{ fontSize: 14, color: 'error.light' }} />
-                      <Typography variant="caption" color="text.secondary">
-                        {post.likes?.[0]?.count ?? 0}
-                      </Typography>
-                    </Box>
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-                      <CommentIcon sx={{ fontSize: 14, color: 'text.secondary' }} />
-                      <Typography variant="caption" color="text.secondary">
-                        {post.comments?.[0]?.count ?? 0}
-                      </Typography>
+                  <Box sx={{ display: 'flex', gap: 1, mt: 1, alignItems: 'center', flexWrap: 'wrap' }}>
+                    <Chip label={post.profiles?.username || '알 수 없음'} size="small" />
+                    <Typography variant="caption" color="text.secondary">
+                      {new Date(post.created_at).toLocaleDateString('ko-KR')}
+                    </Typography>
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, ml: 'auto' }}>
+                      <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                        <ViewIcon sx={{ fontSize: 14, color: 'text.secondary' }} />
+                        <Typography variant="caption" color="text.secondary">
+                          {post.views ?? 0}
+                        </Typography>
+                      </Box>
+                      <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                        <LikeIcon sx={{ fontSize: 14, color: 'error.light' }} />
+                        <Typography variant="caption" color="text.secondary">
+                          {post.likes?.[0]?.count ?? 0}
+                        </Typography>
+                      </Box>
+                      <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                        <CommentIcon sx={{ fontSize: 14, color: 'text.secondary' }} />
+                        <Typography variant="caption" color="text.secondary">
+                          {post.comments?.[0]?.count ?? 0}
+                        </Typography>
+                      </Box>
                     </Box>
                   </Box>
-                </Box>
-                {post.hashtags?.length > 0 && (
-                  <Box sx={{ display: 'flex', gap: 0.5, mt: 1, flexWrap: 'wrap' }}>
-                    {post.hashtags.map((tag) => (
-                      <Chip key={tag} label={`#${tag}`} size="small" variant="outlined" color="primary" />
-                    ))}
+                  {post.hashtags?.length > 0 && (
+                    <Box sx={{ display: 'flex', gap: 0.5, mt: 1, flexWrap: 'wrap' }}>
+                      {post.hashtags.map((tag) => (
+                        <Chip key={tag} label={`#${tag}`} size="small" variant="outlined" color="primary" />
+                      ))}
+                    </Box>
+                  )}
+                </CardContent>
+                {post.image_url && (
+                  <Box sx={{ flexShrink: 0, width: 120, alignSelf: 'stretch' }}>
+                    <img
+                      src={post.image_url}
+                      alt={post.title}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '0 4px 4px 0', display: 'block' }}
+                    />
                   </Box>
                 )}
-              </CardContent>
+              </Box>
             </CardActionArea>
           </Card>
         ))}
